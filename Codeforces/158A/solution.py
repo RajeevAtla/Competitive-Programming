@@ -1,11 +1,5 @@
-s = list(map(int, input().split()))
-n = s[0]
-k = s[1]
+n, k = map(int, input().split())
 
 scores = list(map(int, input().split()))
-num = 0
-for i in range(n): 
-    if(scores[i] > scores[k]): 
-        num += 1
-
-print(num)
+scores.insert(0, 0)
+print(sum([1 if i >= scores[k] and i > 0 else 0 for i in scores]))
