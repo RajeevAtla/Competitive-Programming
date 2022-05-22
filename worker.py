@@ -1,19 +1,8 @@
-import os
+import requests
+import json
 
-folders = [x[0] for x in os.walk('.')]
+f = open("info.json",)
 
-for i in folders:
-    if 'git' in i:
-        folders.remove(i)
+data = json.load(f)
 
-#folders = list(map(lambda x: x.replace('\\', '').replace('.\\', '').replace('.', ''), folders))
-
-for i in folders:
-    if 'gitobjects' in i:
-        folders.remove(i)
-
-for i in folders:
-    if '.git' in i:
-        folders.remove(i)
-
-print(folders)
+print(data)
